@@ -18,3 +18,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
+/* 
+Leaving these here because of student purpose but with resource should be fine
+Route::get('orders/{order_id}', 'OrderController@show');
+Route::post('orders/vehicle_assign', 'OrderController@vehicle_assign');
+Route::post('orders/incident', 'OrderController@index');
+
+Route::post('route/incident', 'RouteController@index'); 
+*/
+
+Route::resource('orders', 'OrderController');
+
+Route::resource('routes', 'RouteController');
+Route::post('routes/{route_id}/vehicle_assign', 'RouteController@vehicle_assign');

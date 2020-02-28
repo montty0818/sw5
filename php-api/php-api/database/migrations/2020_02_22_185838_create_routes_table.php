@@ -17,7 +17,7 @@ class CreateRoutesTable extends Migration
             $table->bigIncrements('id');
             $table->string('guide', 100);
             $table->enum('status', ['starting', 'on trip', 'close to location', 'finished']);
-            $table->string('vehicle', 100);
+            $table->string('vehicle', 100)->nullable();
             $table->text('observation');
             $table->integer('order_id');
             $table->timestamps();           
