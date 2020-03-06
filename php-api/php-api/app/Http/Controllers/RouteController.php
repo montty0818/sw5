@@ -43,7 +43,21 @@ class RouteController extends Controller
             return ResponseController::response('fail', [], 304);
         }
         return ResponseController::response('fail', [], 404);
-    } 
+    }
+    
+    public function report_incident(int $route_id, Request $request)
+    {
+        $route = $this->route->find($route_id);
+        if ($route) {
+            $incident = $request->input('incident');
+            $route->observation = $incident;
+            if ($route->save()) {
+                return ResponseController::response('success', $route);
+            }
+            return ResponseController::response('fail', [], 304);
+        }
+        return ResponseController::response('fail', [], 404);
+    }  
 
     /**
      * Display a listing of the resource.
