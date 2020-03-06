@@ -37,6 +37,6 @@ class OrdenesPivotVehiculos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('licencias');
+        Schema::dropIfExists('orden_vehiculo');
     }
 }

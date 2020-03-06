@@ -13,6 +13,21 @@ class OrdenesPivotConductores extends Migration
      */
     public function up()
     {
+        Schema::create('orden_conductor', function (Blueprint $table) {
+
+            $table->integer('orden_id')->unsigned();
+        
+            $table->integer('conductores_id')->unsigned();
+        
+            $table->foreign('orden_id')->references('id')->on('ordenes')
+        
+                ->onDelete('cascade');
+        
+            $table->foreign('conductores_id')->references('id')->on('conductores')
+        
+                ->onDelete('cascade');
+        
+        });
         //
     }
 
@@ -23,6 +38,7 @@ class OrdenesPivotConductores extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('orden_conductor');
         //
     }
 }

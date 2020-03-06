@@ -13,6 +13,21 @@ class ConductoresPivotSkills extends Migration
      */
     public function up()
     {
+        Schema::create('conductor_licencia', function (Blueprint $table) {
+
+            $table->integer('conductores_id')->unsigned();
+        
+            $table->integer('licencia_id')->unsigned();
+        
+            $table->foreign('conductores_id')->references('id')->on('conductores')
+        
+                ->onDelete('cascade');
+        
+            $table->foreign('licencia_id')->references('id')->on('licencias')
+        
+                ->onDelete('cascade');
+        
+        });
         //
     }
 
@@ -23,6 +38,7 @@ class ConductoresPivotSkills extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('conductor_licencia');
         //
     }
 }
