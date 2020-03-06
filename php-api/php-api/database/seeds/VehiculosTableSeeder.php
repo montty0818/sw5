@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class VehiculosTableSeeder extends Seeder
 {
@@ -12,18 +13,18 @@ class VehiculosTableSeeder extends Seeder
     public function run()
     {
         DB::table('vehiculos')->insert([
-            'id' => '1',
             'placa' => 'mnu12',
+            'tipo' => '2 ejes',
             'modelo' => '2007',          
         ],
         [
-            'id' => '2',
             'placa' => 'aou23',
+            'tipo' => '3 ejes',
             'modelo' => '2007',          
         ],
         [
-            'id' => '3',
             'placa' => 'tou34',
+            'tipo' => 'tractomula',
             'modelo' => '2007',          
         ]);//
     }

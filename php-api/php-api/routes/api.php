@@ -17,8 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('orders', 'OrderController');
-Route::post('orders/{route_id}/incident', 'OrderController@report_incident');
-
-Route::post('routes/{route_id}/vehicle_assign', 'RouteController@vehicle_assign');
-Route::post('routes/{route_id}/incident', 'RouteController@report_incident');
+Route::resource('ordenes', 'OrdenController');
