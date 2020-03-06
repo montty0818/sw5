@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
             LicensiasTableSeeder::class,
             NotificacionesTableSeeder::class,
             OrdenesTableSeeder::class,
-            VehiculosTableSeeder::class
+            VehiculosTableSeeder::class,
+            Pivots1TableSeeder::class,
+            Pivots2TableSeeder::class
         ]);
     }
 }

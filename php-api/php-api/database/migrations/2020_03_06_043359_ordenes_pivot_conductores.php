@@ -15,15 +15,15 @@ class OrdenesPivotConductores extends Migration
     {
         Schema::create('orden_conductor', function (Blueprint $table) {
 
-            $table->integer('orden_id')->unsigned();
+            $table->bigInteger('orden_id')->unsigned();
         
-            $table->integer('conductores_id')->unsigned();
+            $table->bigInteger('conductor_id')->unsigned();
         
             $table->foreign('orden_id')->references('id')->on('ordenes')
         
                 ->onDelete('cascade');
         
-            $table->foreign('conductores_id')->references('id')->on('conductores')
+            $table->foreign('conductor_id')->references('id')->on('conductores')
         
                 ->onDelete('cascade');
         

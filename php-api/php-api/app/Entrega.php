@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Entrega extends Model
 {
+    protected $table = 'entregas';
+
     protected $fillable = [
         'destinatario', 
         'direccion',

@@ -19,6 +19,16 @@ class Orden extends Model
         return $this->hasOne('App\Entrega', 'id');
     }
 
+    public function vehiculos()
+    {
+        return $this->belongsToMany('App\Vehiculo', 'orden_vehiculo');
+    }
+    
+    public function conductores()
+    {
+        return $this->belongsToMany('App\Conductor', 'orden_conductor');
+    }    
+
     public static function getRules($is_update = false, $model = null)
     {
         $rules = [

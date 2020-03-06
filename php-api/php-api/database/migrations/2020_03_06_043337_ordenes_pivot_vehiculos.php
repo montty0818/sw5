@@ -15,9 +15,9 @@ class OrdenesPivotVehiculos extends Migration
     {
         Schema::create('orden_vehiculo', function (Blueprint $table) {
 
-            $table->integer('orden_id')->unsigned();
+            $table->bigInteger('orden_id')->unsigned();
         
-            $table->integer('vehiculo_id')->unsigned();
+            $table->bigInteger('vehiculo_id')->unsigned();
         
             $table->foreign('orden_id')->references('id')->on('ordenes')
         

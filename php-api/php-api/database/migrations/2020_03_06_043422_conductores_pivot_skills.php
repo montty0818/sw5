@@ -15,11 +15,11 @@ class ConductoresPivotSkills extends Migration
     {
         Schema::create('conductor_licencia', function (Blueprint $table) {
 
-            $table->integer('conductores_id')->unsigned();
+            $table->bigInteger('conductor_id')->unsigned();
         
-            $table->integer('licencia_id')->unsigned();
+            $table->bigInteger('licencia_id')->unsigned();
         
-            $table->foreign('conductores_id')->references('id')->on('conductores')
+            $table->foreign('conductor_id')->references('id')->on('conductores')
         
                 ->onDelete('cascade');
         

@@ -6,11 +6,28 @@ use Illuminate\Database\Eloquent\Model;
 
 class Conductor extends Model
 {
+    protected $table = 'conductores';
+
     protected $fillable = [
         'cedula', 
         'nombre',
         'estado'
     ];
+
+    public function ordenes()
+    {
+        return $this->belongsToMany('App\Orden', 'orden_conductor');
+    }
+    
+    public function licencias()
+    {
+        return $this->belongsToMany('App\Licencia', 'conductor_licencia');
+    }
+
+    public function notificaciones()
+    {
+        return $this->belongsToMany('App\Notificacion', 'conductor_notificacion');
+    }    
 
     public static function getRules($is_update = false, $model = null)
     {

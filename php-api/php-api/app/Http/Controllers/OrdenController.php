@@ -47,10 +47,8 @@ class OrdenController extends Controller
         $validator = Validator::make($request->all(), $this->orden->getRules());
 
         if ($validator->fails()) {
-            return ResponseController::response('Validator fail', [], 404);
+            return ResponseController::response('Todos los campos son requeridos', [], 404);
         }
-
-        $request->validate($this->orden->getRules());
 
         $input = $request->all();
 
@@ -71,7 +69,7 @@ class OrdenController extends Controller
     public function show($id)
     {
         $orden = $this->orden->find($id);
-        $orden->load('entrega');
+        $orden->load(['entrega', 'vehiculos', 'conductores']);
         if ($orden) {
             return ResponseController::response('success', $orden);
         }
