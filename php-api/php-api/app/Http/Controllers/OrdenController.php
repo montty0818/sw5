@@ -64,7 +64,7 @@ class OrdenController extends Controller
     {
         $orden = $this->orden->find($id);
         if ($orden) {
-            $orden->load(['entrega', 'vehiculos', 'conductores']);
+            $orden->load(['entrega', 'vehiculos', 'conductores', 'reportes']);
             return ResponseController::response('success', $orden);
         }
         return ResponseController::response('Element not found', [], 404);

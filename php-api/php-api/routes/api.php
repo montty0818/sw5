@@ -17,8 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::resource('conductores', 'ConductorController');
+
 Route::resource('ordenes', 'OrdenController');
 Route::resource('ordenes.vehiculos', 'OrdenVehiculoController');
 Route::resource('ordenes.conductores', 'OrdenConductor');
+Route::resource('ordenes.reportes', 'OrdenReporteController');
 
 Route::resource('entregas', 'EntregaController');

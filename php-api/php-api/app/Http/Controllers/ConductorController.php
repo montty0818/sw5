@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Conductor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ConductorController extends Controller
 {

@@ -33,7 +33,7 @@ class OrdenVehiculoController extends Controller
             $idsVehiculos = $request->all();
             try {
                 $orden->vehiculos()->attach($idsVehiculos['vehiculos']);
-                $orden->load(['entrega', 'vehiculos', 'conductores']);
+                $orden->load(['entrega', 'vehiculos', 'conductores', 'reportes']);
                 return ResponseController::response('success', $orden);                
             } catch (\Throwable $th) {
                 return ResponseController::response('Element not found', [], 404);

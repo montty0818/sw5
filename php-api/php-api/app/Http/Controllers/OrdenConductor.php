@@ -27,7 +27,7 @@ class OrdenConductor extends Controller
             $idsConductor = $request->all();
             try {
                 $orden->vehiculos()->attach($idsConductor['conductores']);
-                $orden->load(['entrega', 'vehiculos', 'conductores']);
+                $orden->load(['entrega', 'vehiculos', 'conductores', 'reportes']);
                 return ResponseController::response('success', $orden);                
             } catch (\Throwable $th) {
                 return ResponseController::response('Element not found', [], 404);
