@@ -46,5 +46,30 @@ class OrdenReporteController extends Controller
             }            
         }
         return ResponseController::response('Element not found', [], 404);
-    }    
+    }
+    
+    public function update(Request $request, $id, $idReporte)
+    {
+        $orden = $this->orden->find($id);
+        if ($orden) {
+
+            $validator = Validator::make($request->all(), $this->reporte->getRules());
+
+            if ($validator->fails()) {
+                return ResponseController::response('Todos los campos son requeridos', [], 404);
+            }
+
+            $input = $request->all();
+
+            $reporte = $this->reporte->find($idReporte);
+    
+            $save = $reporte->update($input);
+    
+            if ($save) {
+                return ResponseController::response('success', $reporte);
+            }
+            return ResponseController::response('fail', [], 404); 
+        }
+        return ResponseController::response('Element not found', [], 404);
+    }
 }

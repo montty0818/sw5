@@ -25,7 +25,6 @@ class Notificacion extends Model
     public static function getRules($is_update = false, $model = null)
     {
         $rules = [
-            'nombre'    => 'required',
             'tipo'        => 'required',
             'mensaje'	 => 'required',
         ];

@@ -25,3 +25,5 @@ Route::resource('ordenes.conductores', 'OrdenConductor');
 Route::resource('ordenes.reportes', 'OrdenReporteController');
 
 Route::resource('entregas', 'EntregaController');
+
+Route::resource('notificaciones', 'NotificacionController');
