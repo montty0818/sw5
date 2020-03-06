@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             //ConductoresTableSeeder::class,
             //EntregasTableSeeder::class,
-            //LicensiasTableSeeder::class,
+            LicensiasTableSeeder::class,
             //NotificacionesTableSeeder::class,
             //OrdenesTableSeeder::class,
             VehiculosTableSeeder::class

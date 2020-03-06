@@ -16,7 +16,8 @@ class CreateLicenciasTable extends Migration
         Schema::create('licencias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre', 100);
-            $table->string('descripcion', 100);            
+            $table->string('descripcion', 100);
+            $table->enum('estado', ['activo', 'suspendido']);            
             $table->timestamps();
             $table->softDeletes();
         });

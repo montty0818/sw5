@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('conductores', 'ConductorController');
+Route::resource('conductores.suspenciones', 'ConductorSuspencionController');
 
 Route::resource('ordenes', 'OrdenController');
 Route::resource('ordenes.vehiculos', 'OrdenVehiculoController');
