@@ -11,4 +11,14 @@ class Conductor extends Model
         'nombre',
         'estado'
     ];
+
+    public static function getRules($is_update = false, $model = null)
+    {
+        $rules = [
+            'cedula'   => 'required',
+            'nombre'   => 'required',
+            'estado'   => 'required',
+        ];
+        return $rules;
+    }
 }

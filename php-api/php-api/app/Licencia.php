@@ -10,4 +10,13 @@ class Licencia extends Model
         'nombre',
         'descripcion'
     ];
+
+    public static function getRules($is_update = false, $model = null)
+    {
+        $rules = [
+            'nombre'    => 'required',
+            'descripcion'  => 'required',
+        ];
+        return $rules;
+    }
 }
