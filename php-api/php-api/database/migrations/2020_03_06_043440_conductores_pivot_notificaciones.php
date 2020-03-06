@@ -13,7 +13,19 @@ class ConductoresPivotNotificaciones extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('conductor_notificacion', function (Blueprint $table) {
+
+            $table->integer('conductor_id')->unsigned();
+        
+            $table->integer('notificacion_id')->unsigned();
+        
+            $table->foreign('conductor_id')->references('id')->on('conductor')
+        
+                ->onDelete('cascade');
+        
+            $table->foreign('notificacion_id')->references('id')->on('notificcion')
+        
+                ->onDelete('cascade');
     }
 
     /**
