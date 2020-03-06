@@ -15,17 +15,19 @@ class VehiculosTableSeeder extends Seeder
         DB::table('vehiculos')->insert([
             'placa' => 'mnu12',
             'tipo' => '2 ejes',
-            'modelo' => '2007',          
-        ],
-        [
+            'modelo' => '2007',
+        ]); 
+
+        DB::table('vehiculos')->insert([
             'placa' => 'aou23',
             'tipo' => '3 ejes',
-            'modelo' => '2007',          
-        ],
-        [
+            'modelo' => '2007',  
+        ]); 
+        
+        DB::table('vehiculos')->insert([
             'placa' => 'tou34',
             'tipo' => 'tractomula',
-            'modelo' => '2007',          
-        ]);//
+            'modelo' => '2007',
+        ]); 
     }
 }

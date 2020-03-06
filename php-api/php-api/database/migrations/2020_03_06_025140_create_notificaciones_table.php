@@ -18,6 +18,7 @@ class CreateNotificacionesTable extends Migration
             $table->enum('tipo', ['suspencion', 'examen']);
             $table->string('mensaje', 100);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

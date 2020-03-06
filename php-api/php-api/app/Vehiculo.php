@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Vehiculo extends Model
 {
+    use SoftDeletes;
+    
     protected $table = 'vehiculos';
 
     protected $fillable = [
@@ -24,6 +27,7 @@ class Vehiculo extends Model
         $rules = [
             'placa'    => 'required',
             'tipo'        => 'required',
+            'modelo'    => 'required'
         ];
         return $rules;
     }    

@@ -23,17 +23,11 @@ class OrdenController extends Controller
      */
     public function index()
     {
-        return 1;
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return 2;
+        $orden = $this->orden->all();
+        if (count($orden)) {
+            return ResponseController::response('success', $orden);
+        }
+        return ResponseController::response('no se encontro nada', [], 404);
     }
 
     /**
@@ -69,22 +63,11 @@ class OrdenController extends Controller
     public function show($id)
     {
         $orden = $this->orden->find($id);
-        $orden->load(['entrega', 'vehiculos', 'conductores']);
         if ($orden) {
+            $orden->load(['entrega', 'vehiculos', 'conductores']);
             return ResponseController::response('success', $orden);
         }
-        return ResponseController::response('fail', [], 404);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        return 4;
+        return ResponseController::response('Element not found', [], 404);
     }
 
     /**
@@ -96,7 +79,22 @@ class OrdenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return 5;
+        $validator = Validator::make($request->all(), $this->orden->getRules());
+
+        if ($validator->fails()) {
+            return ResponseController::response('Todos los campos son requeridos', [], 404);
+        }
+
+        $input = $request->all();
+
+        $orden = $this->orden->find($id);
+
+        $save = $orden->update($input);
+
+        if ($save) {
+            return ResponseController::response('success', $orden);
+        }
+        return ResponseController::response('fail', [], 404);
     }
 
     /**
@@ -107,6 +105,13 @@ class OrdenController extends Controller
      */
     public function destroy($id)
     {
-        return 6;
+        $orden = $this->orden->find($id);
+        if ($orden) {
+            if ($orden->delete()) {
+                return ResponseController::response('success');
+            }
+            return ResponseController::response('fail', [], 400);
+        }
+        return ResponseController::response('Element not found', [], 404);
     }
 }

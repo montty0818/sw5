@@ -15,17 +15,19 @@ class OrdenesTableSeeder extends Seeder
         DB::table('ordenes')->insert([
             'entrega_id' => '1',
             'codigo' => 'or01',
-            'descripcion' => 'pedido cliente: fulanito',          
-        ],
-        [
+            'descripcion' => 'pedido cliente: fulanito',  
+        ]); 
+
+        DB::table('ordenes')->insert([
             'entrega_id' => '2',
             'codigo' => 'or02',
-            'descripcion' => 'pedido cliente: fulanito',          
-        ],
-        [
+            'descripcion' => 'pedido cliente: fulanito',  
+        ]); 
+        
+        DB::table('ordenes')->insert([
             'entrega_id' => '3',
             'codigo' => 'or03',
-            'descripcion' => 'pedido cliente: peranito',          
-        ]);//
+            'descripcion' => 'pedido cliente: peranito', 
+        ]);         
     }
 }

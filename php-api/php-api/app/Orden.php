@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Orden extends Model
 {
+    use SoftDeletes;
+    
     protected $table = 'ordenes';
 
     protected $fillable = [
@@ -32,7 +35,7 @@ class Orden extends Model
     public static function getRules($is_update = false, $model = null)
     {
         $rules = [
-            'entrega_id'    => 'required',
+            'descripcion'    => 'required',
             'codigo'        => 'required',
         ];
         return $rules;

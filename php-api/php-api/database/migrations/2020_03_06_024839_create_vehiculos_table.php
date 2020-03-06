@@ -19,6 +19,7 @@ class CreateVehiculosTable extends Migration
             $table->string('tipo', 100);
             $table->string('modelo', 100);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

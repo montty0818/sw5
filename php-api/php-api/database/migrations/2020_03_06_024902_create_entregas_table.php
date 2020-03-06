@@ -21,6 +21,7 @@ class CreateEntregasTable extends Migration
             $table->string('tipo', 100);
             $table->string('notas', 100);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

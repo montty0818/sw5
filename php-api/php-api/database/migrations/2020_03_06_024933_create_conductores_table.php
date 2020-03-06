@@ -19,6 +19,7 @@ class CreateConductoresTable extends Migration
             $table->string('nombre', 100);    
             $table->enum('estado', ['activo', 'inactivo']);        
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

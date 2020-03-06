@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Conductor extends Model
 {
+    use SoftDeletes;
+    
     protected $table = 'conductores';
 
     protected $fillable = [

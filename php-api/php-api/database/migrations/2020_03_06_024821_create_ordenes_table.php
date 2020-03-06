@@ -15,10 +15,11 @@ class CreateOrdenesTable extends Migration
     {
         Schema::create('ordenes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('entrega_id');
+            $table->integer('entrega_id')->nullable();
             $table->string('codigo', 100);
             $table->string('descripcion', 100);
-            $table->timestamps();            
+            $table->timestamps();  
+            $table->softDeletes();          
         });
     }
 
