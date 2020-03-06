@@ -11,6 +11,14 @@ class NotificacionesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('notificaciones')->insert([
+            'tipo' => 'examen',
+            'mensaje' => 'el proximo dia 26 de marzo se levara a cabo el examen para la licencia de tractocamion',
+        ]);
         //
+        DB::table('notificaciones')->insert([
+            'tipo' => 'suspencion',
+            'mensaje' => 'usted ha sido suspendido por reprobar el examen de conduccion',
+        ]);
     }
 }
