@@ -13,14 +13,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            ConductoresTableSeeder::class,
-            EntregasTableSeeder::class,
-            LicensiasTableSeeder::class,
-            NotificacionesTableSeeder::class,
-            OrdenesTableSeeder::class,
-            VehiculosTableSeeder::class,
-            Pivots1TableSeeder::class,
-            Pivots2TableSeeder::class
+            //ConductoresTableSeeder::class,
+            //EntregasTableSeeder::class,
+            //LicensiasTableSeeder::class,
+            //NotificacionesTableSeeder::class,
+            //OrdenesTableSeeder::class,
+            VehiculosTableSeeder::class
+            //Pivots1TableSeeder::class,
+            //Pivots2TableSeeder::class
         ]);
     }
 }

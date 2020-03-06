@@ -19,6 +19,11 @@ class Entrega extends Model
         'notas'
     ];
 
+    public function orden()
+    {
+        return $this->belongsTo('App\Orden');
+    }    
+
     public static function getRules($is_update = false, $model = null)
     {
         $rules = [
@@ -26,7 +31,7 @@ class Entrega extends Model
             'direccion'        => 'required',
             'estado'   => 'required',
             'tipo'   => 'required',
-            'notas' => 'materiales de construccion, tipo losa y cemento',
+            //'notas' => 'materiales de construccion, tipo losa y cemento',
         ];
         return $rules;
     }

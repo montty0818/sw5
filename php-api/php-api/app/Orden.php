@@ -30,6 +30,11 @@ class Orden extends Model
     public function conductores()
     {
         return $this->belongsToMany('App\Conductor', 'orden_conductor');
+    }
+    
+    public function reportes()
+    {
+        return $this->belongsToMany('App\Reporte', 'orden_reporte');
     }    
 
     public static function getRules($is_update = false, $model = null)
