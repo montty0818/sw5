@@ -11,4 +11,14 @@ class Vehiculo extends Model
         'tipo',
         'modelo'
     ];
+
+
+     public static function getRules($is_update = false, $model = null)
+    {
+        $rules = [
+            'placa'    => 'required',
+            'tipo'        => 'required',
+        ];
+        return $rules;
+    }    
 }

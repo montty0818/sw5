@@ -11,4 +11,14 @@ class Notificacion extends Model
         'tipo',
         'mensaje',
     ];
+
+    public static function getRules($is_update = false, $model = null)
+    {
+        $rules = [
+            'nombre'    => 'required',
+            'tipo'        => 'required',
+            'mensaje'	 => 'required',
+        ];
+        return $rules;
+    }   
 }

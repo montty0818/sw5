@@ -24,7 +24,6 @@ class Orden extends Model
         $rules = [
             'entrega_id'    => 'required',
             'codigo'        => 'required',
-            'descripcion'   => 'required',
         ];
         return $rules;
     }    
