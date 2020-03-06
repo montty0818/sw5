@@ -11,6 +11,16 @@ class ConductoresTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('conductores')->insert([
+            'cedula' => '1234',
+            'nombre' => 'Jofrey',
+            'estado' => 'Activo',
+        ]);
         //
+        DB::table('conductores')->insert([
+            'cedula' => '5678',
+            'nombre' => 'pablo',
+            'estado' => 'Activo',
+        ]);
     }
 }
